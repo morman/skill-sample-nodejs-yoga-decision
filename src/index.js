@@ -17,23 +17,65 @@ var states = {
 
 
 // Questions
-var nodes = [{ "node": 1, "message": "Do you like working with people", "yes": 2, "no": 3 },
-             { "node": 2, "message": "Do you like caring for others", "yes": 4, "no": 5 },
-             { "node": 3, "message": "Would you like to work during the day", "yes": 6, "no": 7 },
-             { "node": 4, "message": "Can you stand the sight of blood", "yes": 8, "no": 9 },
-             { "node": 5, "message": "Is money the most important thing in your life", "yes": 10, "no": 11 },
-             { "node": 6, "message": "Do you want to work with animals", "yes": 12, "no": 13 },
-             { "node": 7, "message": "Are you active", "yes": 14, "no": 15 },
+var nodes = [{ "node": 1, "message": "Want to move fast", "yes": 2, "no": 5 },
+// Questions: fast
+             { "node": 2, "message": "Are you a beginner", "yes": 31, "no": 3 },
+             { "node": 3, "message": "Do you like routines", "yes": 32, "no": 4 },
+             { "node": 4, "message": "Interested in philosophy", "yes": 33, "no": 34 },
+// Questions: sweat
+             { "node": 5, "message": "Love to sweat", "yes": 6, "no": 7 },
+             { "node": 6, "message": "Do you like routines", "yes": 41, "no": 42 },
+// Questions: athletic
+             { "node": 7, "message": "Looking for an athletic yoga", "yes": 8, "no": 10 },
+             { "node": 8, "message": "Want encouragement throughout class", "yes": 51, "no": 9 },
+             { "node": 9, "message": "Want to use props", "yes": 52, "no": 53 },
+// Questions: gentler
+             { "node": 10, "message": "Or a gentler experience", "yes": 11, "no": 13 },
+             { "node": 11, "message": "Would you hold a pose for 10 minutes", "yes": 61, "no": 12 },
+             { "node": 12, "message": "Want to move around", "yes": 62, "no": 63 },
+// Questions: benefits
+             { "node": 13, "message": "Looking for specific benefits", "yes": 14, "no": 17 },
+             { "node": 14, "message": "Striving for overall wellness", "yes": 71, "no": 15 },
+             { "node": 15, "message": "Want to learn to completely relax", "yes": 72, "no": 16 },
+             { "node": 16, "message": "Would you adjust your lifestyle", "yes": 73, "no": 74 },
+// Questions: chant
+             { "node": 17, "message": "Would you chant", "yes": 18, "no": 19 },
+             { "node": 18, "message": "Consider being a vegan", "yes": 81, "no": 82 },
+// Queastions specialty
+            { "node": 19, "message": "Don't worry, there are also specialty classes. Fine with getting wet?", "yes": 91, "no": 20 },
+            { "node": 20, "message": "Want to reach new heights", "yes": 92, "no": 21 },
+            { "node": 21, "message": "Are you pregnant", "yes": 93, "no": 94 },
 
-// Answers & descriptions
-             { "node": 8, "message": "Doctor", "yes": 0, "no": 0, "description": "A physician or medical doctor is a professional who practices medicine." },
-             { "node": 9, "message": "Teacher", "yes": 0, "no": 0, "description": "In education, teachers facilitate student learning, often in a school or academy or perhaps in another environment such as outdoors."},
-             { "node": 10, "message": "Sales person", "yes": 0, "no": 0 , "description": "A salesman is someone who works in sales, with the main function of selling products or services to others."},
-             { "node": 11, "message": "Artist", "yes": 0, "no": 0 , "description": "An artist is a person engaged in one or more of any of a broad spectrum of activities related to creating art, practicing the arts, and, or demonstrating an art."},
-             { "node": 12, "message": "Zookeeper", "yes": 0, "no": 0 , "description": "A zookeeper is a person who manages zoo animals that are kept in captivity for conservation or to be displayed to the public, and are usually responsible for the feeding and daily care of the animals."},
-             { "node": 13, "message": "Software engineer", "yes": 0, "no": 0 , "description": "A software engineer is a person who applies the principles of software engineering to the design, development, maintenance, testing, and evaluation of the software and systems that make computers or anything containing software work."},
-             { "node": 14, "message": "Security Guard", "yes": 0, "no": 0 , "description": "A security guard is a private person who is paid to protect an organization's assets from various hazards such as criminal activity, by utilizing preventative measures. "},
-             { "node": 15, "message": "Lighthouse keeper", "yes": 0, "no": 0 , "description": "A lighthouse keeper is the person responsible for tending and caring for a lighthouse, particularly the light and lens in the days when oil lamps and clockwork mechanisms were used."},
+// Answers & descriptions - Flow or Vinyasa
+             { "node": 31, "message": "Slow flow", "yes": 0, "no": 0, "description": "Flow classes move quickly and are not recommended or beginners. Taking a slow flow class is a safe way to be comfortable with the motions and poses of flow yoga before moving on to the advanced classes that pick up the pace." },
+             { "node": 32, "message": "Ashtanga", "yes": 0, "no": 0, "description": "In this fast-moving class you follow a set series. The speed is set to the pace of your breath. You will definitely sweat and create the internal heat that this class is centered around." },
+             { "node": 33, "message": "Baptiste", "yes": 0, "no": 0, "description": "While Baptiste is a physical practice, the themes of the classes are self-empowerment and living a meaningful life." },
+             { "node": 34, "message": "Power", "yes": 0, "no": 0, "description": "This is a more commercial version of yoga. It's physical and based around a concept of fitness." },
+// Answers & descriptions - Hot Yoga
+             { "node": 41, "message": "Bikram", "yes": 0, "no": 0, "description": "Every class of Bikram consists of 26 poses practiced in a patented series." },
+             { "node": 42, "message": "Hot Yoga", "yes": 0, "no": 0, "description": "Any kind of yoga can be practiced in a hot room. Many studios offer flow, Vinyasa, and alignment-focused classes in their hot studios." },
+// Answers & descriptions - Alignment Focused
+             { "node": 51, "message": "Anusara", "yes": 0, "no": 0, "description": "The phrase that accompanies Anusara yoga classes is to open your heart. These classes include a lot of love languages and affirmation." },
+             { "node": 52, "message": "Iyengar", "yes": 0, "no": 0, "description": "Iyengar yoga focuses on traditional poses that get more advanced the longer you stick with the practice. Often in these classes you will use props like blocks, straps, and blankets." },
+             { "node": 53, "message": "Eischens", "yes": 0, "no": 0, "description": "In Eischens, the challenge is to get out of habitual patterns of movement and thinking to align mind, body, and spirit." },
+// Answers & descriptions - Gentle Yoga
+             { "node": 61, "message": "Yin", "yes": 0, "no": 0, "description": "In Yin classes you hold poses for a long time in an effort to increase flexibility and balance energy, often with support from props." },
+             { "node": 62, "message": "Kripalu", "yes": 0, "no": 0, "description": "This is a gentle style of yoga that is meant to be effortless and flow with what the body wants and needs." },
+             { "node": 63, "message": "Restorative", "yes": 0, "no": 0, "description": "The movement is relaxing and poses are held up to about five minutes. Classes are typically accompanied by props." },
+// Answers & descriptions - Theraputic
+             { "node": 71, "message": "Integral", "yes": 0, "no": 0, "description": "These classes teach and foster overall wellness. This includes making improvements physically, mentally, and spiritually." },
+             { "node": 72, "message": "Yoga Nidra", "yes": 0, "no": 0, "description": "You are supposed to find total relaxation. The class takes place in a physical and mental state that comes right before sleep." },
+             { "node": 73, "message": "Phoenix Rising", "yes": 0, "no": 0, "description": "This targets physical and mental healing. The poses are meant to connect what is happening to the body with the mind and the spirit." },
+             { "node": 74, "message": "Viniyoga", "yes": 0, "no": 0, "description": "Viniyoga is a form of therapy that targets specific healing benefits such as back healing, anxiety, shoulder therapy, mental health, and more." },
+// Answers & descriptions - Philosophical
+             { "node": 81, "message": "Jivamukti", "yes": 0, "no": 0, "description": "This spiritual practice follows strict lifestyle guidelines that revolve around bettering the community and avoiding harming others." },
+             { "node": 82, "message": "Kundalini", "yes": 0, "no": 0, "description": "Kundalini has only been taught openly to the public for the last 45 years, so it is deeply rooted in tradition. Classes include singing and focusing on balancing energy." },
+// Answers & descriptions - Specialty
+             { "node": 91, "message": "Paddle Board", "yes": 0, "no": 0, "description": "That adaptation involves posing on a stand-up paddle board, and you can't be afraid to get wet. Using a paddle board intensifies the yoga experience and challenges your balance." },
+             { "node": 92, "message": "Aerial", "yes": 0, "no": 0, "description": "Though you aren't too far off the ground, aerial yoga is almost a form of flying. The studios have silks that drape from the ceiling and are used to switch into different poses." },
+             { "node": 93, "message": "Prenatal", "yes": 0, "no": 0, "description": "Prenatal yoga is a form of exercise that is easy on the joints. There are also benefits from practicing meaningful breathing." },
+             { "node": 94, "message": "Every body", "yes": 0, "no": 0, "description": "Every body yoga is a class that uses chairs and other props to make it adaptable for all needs and body types." },
+
 ];
 
 // this is used for keep track of visted nodes when we test for loops in the tree
@@ -42,7 +84,7 @@ var visited;
 // These are messages that Alexa says to the user during conversation
 
 // This is the intial welcome message
-var welcomeMessage = "Welcome to decision tree, are you ready to play?";
+var welcomeMessage = "Welcome to yoga decision, are you ready to play?";
 
 // This is the message that is repeated if the response to the initial welcome message is not heard
 var repeatWelcomeMessage = "Say yes to start the game or no to quit.";
@@ -54,10 +96,10 @@ var promptToStartMessage = "Say yes to continue, or no to end the game.";
 var promptToSayYesNo = "Say yes or no to answer the question.";
 
 // This is the response to the user after the final question when Alex decides on what group choice the user should be given
-var decisionMessage = "I think you would make a good";
+var decisionMessage = "I think you would like";
 
 // This is the prompt to ask the user if they would like to hear a short description of thier chosen profession or to play again
-var playAgainMessage = "Say 'tell me more' to hear a short description for this profession, or do you want to play again?";
+var playAgainMessage = "Say 'tell me more' to hear a short description for this practice, or do you want to play again?";
 
 // this is the help message during the setup at the beginning of the game
 var helpMessage = "I will ask you some questions that will identify what you would be best at. Want to start now?";
